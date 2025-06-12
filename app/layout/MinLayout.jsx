@@ -1,3 +1,5 @@
-export const MinLayout = ({children}) => {
-  return {children}
-};
+export const MinLayout = ({ children }) => {
+  return (
+    <div>{children}</div>
+  )
+}
