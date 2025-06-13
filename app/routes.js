@@ -1,9 +1,8 @@
-import { RoutePaths } from "./constants/route-path";
-import { route, index, layout} from "@react-router/dev/routes";
+import { route, index, layout } from "@react-router/dev/routes";
 
 export default [
-layout('./layout/main.jsx', [
-    index('./pages/home.jsx'),
-    route(RoutePaths.ABOUT_US, './pages/about-us.jsx')
-])
+  layout("./layouts/main.jsx", [
+    index("./pages/home.jsx"),
+    route("/testing", "./pages/testing.jsx"),
+  ]),   
 ];
