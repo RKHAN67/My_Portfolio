@@ -10,10 +10,10 @@
 
 html,
 body {
-  @apply text-[14px] bg-[#FBFBFB] font-sans;
+  @apply text-[14px] bg-[#F2F2F2] font-sans;
 }
 
 .container {
-  @apply w-full mx-auto px-10 max-w-[1596px];
+  @apply w-full mx-auto px-10 max-w-[1210px];
 }
 
