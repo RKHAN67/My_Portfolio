@@ -18,8 +18,7 @@ export const links = () => [
   },
   {
     rel: "stylesheet",
-    // import the font here from fonts.google.com based on the design system - Younus
-    href: "https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap",
+    href: "https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Urbanist:ital,wght@0,100..900;1,100..900&family=Young+Serif&display=swap",
   },
 ];
 
@@ -63,7 +62,7 @@ export function ErrorBoundary({ error }) {
 
   return (
     <main className="pt-16 p-4 container mx-auto">
-      <h1>{message}</h1>
+      <h1 className="text-3xl font-[var(--font-young-serif)]">{message}</h1>
       <p>{details}</p>
       {stack && (
         <pre className="w-full p-4 overflow-x-auto">
