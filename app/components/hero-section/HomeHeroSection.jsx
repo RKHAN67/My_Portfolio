@@ -1,40 +1,104 @@
+import { useEffect, useState } from "react";
 import { Container } from "@/layouts/Container";
 import { Heading } from "../others/Heading";
-import { TextContentSection } from "../TextContentSection";
 import { Button } from "../others/Button";
 
 import circleWave from "/assets/images/hero-section/circle-wave.png";
+
+import iphoneProMaxImage from "/assets/images/hero-section/iphone-pro-max.png";
+import gamingCpuImage from "/assets/images/hero-section/gaming-cpu.png";
 import mobileImage from "/assets/images/hero-section/mobile-image.png";
+import smartWatchImage from "/assets/images/hero-section/smart-watch.png";
+import cpuWithGamingImage from "/assets/images/hero-section/cpu-with-gaming.png";
+
+const heroSectionData = [
+  {
+    title: "Experience Power",
+    highlight: "iPhone Pro Max",
+    description1:
+      "Enjoy premium design and top performance that handles everything you do — fast, smooth, and efficient.",
+    description2:
+      "Capture beautiful moments with cinematic clarity and future-ready camera technology built for creators.",
+    price: "$359,999",
+    image: iphoneProMaxImage,
+  },
+  {
+    title: "Game Beast",
+    highlight: "Beast Gaming CPU",
+    description1:
+      "Built for intense gaming, smooth multitasking, and streaming — fast cooling with customizable RGB case.",
+    description2:
+      "Get top-tier performance, stunning visuals, and serious speed for professional gaming sessions.",
+    price: "$189,999",
+    image: gamingCpuImage,
+  },
+  {
+    title: "iPhone Power",
+    highlight: "iPhone Pro Max",
+    description1:
+      "Premium design with fast, smooth performance built for multitasking and everyday high-end use.",
+    description2:
+      "Capture crisp photos, shoot cinematic videos, and enjoy next-level iPhone innovation daily.",
+    price: "$359,999",
+    image: mobileImage,
+  },
+  {
+    title: "Live Smart",
+    highlight: "Smart Watch Series",
+    description1:
+      "Track your daily steps, monitor health, and stay connected with alerts — right on your wrist.",
+    description2:
+      "Waterproof, music control, stylish and perfect for fitness or regular use throughout your day.",
+    price: "$12,499",
+    image: smartWatchImage,
+  },
+  {
+    title: "Pro Gaming",
+    highlight: "RGB CPU",
+    description1:
+      "All-in-one gaming setup with RGB case, high-speed CPU, monitor, and keyboard combo for gamers.",
+    description2:
+      "Play and stream at high FPS with bold visuals and responsive multitasking performance inside.",
+    price: "$239,999",
+    image: cpuWithGamingImage,
+  },
+];
 
 export const HomeHeroSection = () => {
+  const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % heroSectionData.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const { title, highlight, description1, description2, price, image } =
+    heroSectionData[current];
+
   return (
     <div className="bg-[#0236A6] py-[60px] overflow-hidden">
       <Container>
-        <div className="flex justify-between">
-          <TextContentSection className="gap-[33px]">
-            <TextContentSection>
-              <Heading variant="big" className="max-w-[430px]">
-                Lorem Ipusm <span className="text-[#1658E4]">Lorem Lorem</span>{" "}
-                Ipusm
-              </Heading>
-              <p className="text-[16px] text-white max-w-[432px]">
-                - Lorem Ipsum is simply dummy text of the printing and
-                typesetting industry.
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+          <div className="flex flex-col gap-[25px]">
+            <Heading variant="big" className="max-w-[430px] text-white">
+              {title} <span className="text-[#1658E4]">{highlight}</span>
+            </Heading>
+            <p className="text-[16px] text-white max-w-[432px]">
+              - {description1}
+            </p>
+            <p className="text-[16px] text-white max-w-[432px]">
+              - {description2}
+            </p>
+            <div className="flex flex-col max-w-[240px]">
+              <p className="text-[24px] font-semibold text-white">
+                Starting From
               </p>
-              <p className="text-[16px] text-white max-w-[432px]">
-                - Lorem Ipsum is simply dummy text of the printing and
-                typesetting industry.
+              <p className="text-[24px] font-semibold text-white italic text-end">
+                just <span className="text-[#FFD600]">{price}</span>
               </p>
-
-              <div className="flex flex-col max-w-[240px]">
-                <p className="text-[24px] font-semibold text-white ">
-                  Starting From
-                </p>
-                <p className="text-[24px] font-semibold text-white italic text-end">
-                  just <span className="text-[#FFD600]">$888</span>
-                </p>
-              </div>
-            </TextContentSection>
+            </div>
             <Button>
               Buy Now
               <svg
@@ -46,25 +110,27 @@ export const HomeHeroSection = () => {
                 <use href="/assets/svg/arrow-icon.svg#arrow-icon" />
               </svg>
             </Button>
-          </TextContentSection>
+          </div>
 
-          <div className="relative">
-            <div className="max-w-[349px] absolute top-[10%] right-0">
+          <div className="relative flex justify-center items-center">
+            <img
+              src={circleWave}
+              alt="circle wave"
+              className="max-w-[349px] absolute -top-[14%] -right-10 magic-wave-1"
+            />
+
+            <img
+              src={circleWave}
+              alt="circle wave"
+              className="max-w-[349px] absolute top-[50%] right-50 magic-wave-2"
+            />
+
+            <div className="w-[320px] h-[360px] z-10">
               <img
-                src={circleWave}
-                alt="image of circle wave"
-                className="w-full h-full"
+                src={image}
+                alt="hero"
+                className="w-full h-full object-contain"
               />
-            </div>
-            <div className="max-w-[349px] absolute top-[10%] right-0">
-              <img
-                src={circleWave}
-                alt="image of circle wave"
-                className="w-full h-full"
-              />
-            </div>
-            <div className="max-w-[314px] z-50 ">
-            <img src={mobileImage} alt="image of mobile" className="w-full h-full" />
             </div>
           </div>
         </div>
