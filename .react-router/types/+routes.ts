@@ -13,19 +13,26 @@ type Pages = {
   "/": {
     params: {};
   };
+  "/all-categories": {
+    params: {};
+  };
 };
 
 type RouteFiles = {
   "root.tsx": {
     id: "root";
-    page: "/";
+    page: "/" | "/all-categories";
   };
   "./layouts/main.jsx": {
     id: "layouts/main";
-    page: "/";
+    page: "/" | "/all-categories";
   };
   "./pages/home.jsx": {
     id: "pages/home";
     page: "/";
+  };
+  "./pages/all-categories.jsx": {
+    id: "pages/all-categories";
+    page: "/all-categories";
   };
 };
