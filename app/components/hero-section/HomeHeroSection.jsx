@@ -78,63 +78,85 @@ export const HomeHeroSection = () => {
     heroSectionData[current];
 
   return (
-    <div className="bg-[#0236A6] py-[60px] overflow-hidden">
-      <Container>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-          <div className="flex flex-col gap-[25px]">
-            <Heading variant="big" className="max-w-[430px] text-white">
-              {title} <span className="text-[#1658E4]">{highlight}</span>
-            </Heading>
-            <p className="text-[16px] text-white max-w-[432px]">
-              - {description1}
-            </p>
-            <p className="text-[16px] text-white max-w-[432px]">
-              - {description2}
-            </p>
-            <div className="flex flex-col max-w-[240px]">
-              <p className="text-[24px] font-semibold text-white">
-                Starting From
+    <div>
+      <div className="bg-[#0236A6] py-[60px] overflow-hidden">
+        <Container>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div className="flex flex-col gap-[25px]">
+              <Heading variant="big" className="max-w-[430px] text-white">
+                {title} <span className="text-[#1658E4]">{highlight}</span>
+              </Heading>
+              <p className="text-[16px] text-white max-w-[432px]">
+                - {description1}
               </p>
-              <p className="text-[24px] font-semibold text-white italic text-end">
-                just <span className="text-[#FFD600]">{price}</span>
+              <p className="text-[16px] text-white max-w-[432px]">
+                - {description2}
               </p>
+              <div className="flex flex-col max-w-[240px]">
+                <p className="text-[24px] font-semibold text-white">
+                  Starting From
+                </p>
+                <p className="text-[24px] font-semibold text-white italic text-end">
+                  just <span className="text-[#FFD600]">{price}</span>
+                </p>
+              </div>
+              <Button>
+                Buy Now
+                <svg
+                  viewBox="0 0 10 10"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="w-[10px]"
+                >
+                  <use href="/assets/svg/arrow-icon.svg#arrow-icon" />
+                </svg>
+              </Button>
             </div>
-            <Button>
-              Buy Now
-              <svg
-                viewBox="0 0 10 10"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                className="w-[10px]"
-              >
-                <use href="/assets/svg/arrow-icon.svg#arrow-icon" />
-              </svg>
-            </Button>
-          </div>
 
-          <div className="relative flex justify-center items-center">
-            <img
-              src={circleWave}
-              alt="circle wave"
-              className="max-w-[349px] absolute -top-[14%] -right-10 magic-wave-1"
-            />
-
-            <img
-              src={circleWave}
-              alt="circle wave"
-              className="max-w-[349px] absolute top-[50%] right-50 magic-wave-2"
-            />
-
-            <div className="w-[320px] h-[360px] z-10">
+            <div className="relative flex justify-center items-center">
               <img
-                src={image}
-                alt="hero"
-                className="w-full h-full object-contain"
+                src={circleWave}
+                alt="circle wave"
+                className="max-w-[349px] absolute -top-[14%] -right-10 magic-wave-1"
               />
+
+              <img
+                src={circleWave}
+                alt="circle wave"
+                className="max-w-[349px] absolute top-[50%] right-50 magic-wave-2"
+              />
+
+              <div className="w-[320px] h-[360px] z-10">
+                <img
+                  src={image}
+                  alt="hero"
+                  className="w-full h-full object-contain"
+                />
+              </div>
             </div>
+          </div>
+        </Container>
+      </div>
+
+      <div className="flex justify-center items-center w-full -translate-y-6">
+        <div className="flex justify-between items-center shadow-[5px_5px_6px_0px_#00000040] min-h-[49px] rounded-[30px] px-[28px] pr-[6px] w-[500px] bg-white">
+          <input
+            type="text"
+            className="outline-none text-[16px] text-black placeholder:text-[#C7C7C7C7] w-full"
+            placeholder="Search"
+          />
+          <div className="flex justify-center items-center bg-[#1150D5] rounded-full w-[42px] min-h-[40px] cursor-pointer">
+            <svg
+              viewBox="0 0 16 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              className="w-[16px]"
+            >
+              <use href="/assets/svg/search-icon.svg#search-icon" />
+            </svg>
           </div>
         </div>
-      </Container>
+      </div>
     </div>
   );
 };
