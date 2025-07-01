@@ -1,5 +1,7 @@
-export const ProductCardTitle = () => {
+export const ProductCardTitle = ({ children, className = "" }) => {
   return (
-    <div>ProductCardTitle</div>
+    <p className={`text-[16px] font-semibold text-black ${className}`}>
+      {children}
+    </p>
   );
 };
