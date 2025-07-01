@@ -1,5 +1,5 @@
 export const ProductCardPrice = () => {
   return (
-    <div>ProductCardPrice</div>
+    <p>ProductCardPrice</p>
   );
 };

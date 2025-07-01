@@ -1,5 +1,5 @@
-export const ProductCardBrandTitle = () => {
+export const ProductCardBrandTitle = ({children, className=''}) => {
   return (
-    <div>ProductCardBrandTitle</div>
+    <p className={`text-[15px] text-[#0172E6] font-urbanist font-semibold ${className}`}>{children}</p>
   );
 };
