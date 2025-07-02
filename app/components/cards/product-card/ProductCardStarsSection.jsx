@@ -1,6 +1,6 @@
 export const ProductCardStarsSection = ({ rating = 5 }) => {
   return (
-    <div className="flex gap-[4px]">
+    <div className="flex justify-center items-center gap-[4px]">
       {Array.from({ length: rating }).map((_, index) => (
         <svg
           key={index}
