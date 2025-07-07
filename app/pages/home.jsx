@@ -1,16 +1,9 @@
-import { ProductCardBrandTitle } from "@/components/cards/product-card/ProductCardBrandTitle";
-import { ProductCardImageSection } from "@/components/cards/product-card/ProductCardImageSection";
-import { ProductCardPrice } from "@/components/cards/product-card/ProductCardPrice";
-import { ProductCardStarsSection } from "@/components/cards/product-card/ProductCardStarsSection";
-import { ProductCardTitle } from "@/components/cards/product-card/ProductCardTitle";
-import { ProductCardWarper } from "@/components/cards/product-card/ProductCardWarper";
 import { HomeHeroSection } from "@/components/hero-section/HomeHeroSection";
-import { Button } from "@/components/others/Button";
-import { TextContentSection } from "@/components/TextContentSection";
-import { Container } from "@/layouts/Container";
-import iphoneImage from "/assets/images/product-images/iphone.png";
 import { ProductCard } from "@/components/cards/product-card/ProductCard";
+import { Container } from "@/layouts/Container";
 import { BannerWrapper } from "@/components/banner/BannerWrapper";
+import iphone2Image from "/assets/images/product-images/iphone-2.png";
+import iphoneImage from "/assets/images/product-images/iphone.png";
 
 export const productCardData = [
   {
@@ -66,8 +59,28 @@ export default function Home() {
             />
           ))}
         </div>
+        <BannerWrapper>
+          <div className="flex justify-between">
+            <div>
+              <button
+                className="bg-white rounded-[16px] max-w-[150px] px-[16px] py-[8px]
+            font-urbanist text-[16px] font-bold"
+              >
+                <span className="text-[#0172E6]">HOT</span> Offer
+              </button>
 
-        <BannerWrapper />
+              <p className="text-[40px] font-urbanist font-bold text-white">
+                Apple Phone <br /> <span className="text-[#FFE76B]">IPhone 16 Pro Max</span>
+              </p>
+              <p className="text-[35px] font-urbanist font-bold text-white">Descuento:</p>
+              <p className="text-[35px] font-urbanist font-bold text-white ml-[80px]"><span className="
+              text-[#FFE76B]">50%</span> OFF</p>
+            </div>
+            <div className="-rotate-[7.77deg] max-w-[235px] min-h-[300px]">
+              <img src={iphone2Image} alt="image of iphone" className="w-full h-full" />
+            </div>
+          </div>
+        </BannerWrapper>
       </Container>
     </div>
   );
