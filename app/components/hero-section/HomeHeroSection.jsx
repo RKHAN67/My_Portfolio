@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Container } from "@/layouts/Container";
-import { Heading } from "../others/Heading";
+import { Heading } from "../typography/Heading";
 import { Button } from "../others/Button";
 
 import circleWave from "/assets/images/hero-section/circle-wave.png";
