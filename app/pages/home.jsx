@@ -4,6 +4,11 @@ import { Container } from "@/layouts/Container";
 import { BannerWrapper } from "@/components/banner/BannerWrapper";
 import iphone2Image from "/assets/images/product-images/iphone-2.png";
 import iphoneImage from "/assets/images/product-images/iphone.png";
+import { TextContentSection } from "@/components/TextContentSection";
+import { Heading } from "@/components/typography/Heading";
+import { HighlightedWord } from "@/components/typography/HighlightedWord";
+import { SubHeading } from "@/components/typography/SubHeading";
+import { HeadingContentSection } from "@/components/HeadingContentSection";
 
 export const productCardData = [
   {
@@ -61,7 +66,7 @@ export default function Home() {
         </div>
         <BannerWrapper>
           <div className="flex justify-between">
-            <div>
+            <div className="flex flex-col gap-[30px]">
               <button
                 className="bg-white rounded-[16px] max-w-[150px] px-[16px] py-[8px]
             font-urbanist text-[16px] font-bold"
@@ -70,17 +75,42 @@ export default function Home() {
               </button>
 
               <p className="text-[40px] font-urbanist font-bold text-white">
-                Apple Phone <br /> <span className="text-[#FFE76B]">IPhone 16 Pro Max</span>
+                Apple Phone <br />{" "}
+                <span className="text-[#FFE76B]">IPhone 16 Pro Max</span>
               </p>
-              <p className="text-[35px] font-urbanist font-bold text-white">Descuento:</p>
-              <p className="text-[35px] font-urbanist font-bold text-white ml-[80px]"><span className="
-              text-[#FFE76B]">50%</span> OFF</p>
+              <TextContentSection>
+                <p className="text-[35px] font-urbanist font-bold text-white">
+                  Descuento:
+                </p>
+                <p className="text-[35px] font-urbanist font-bold text-white ml-[80px]">
+                  <span
+                    className="
+              text-[#FFE76B]"
+                  >
+                    50%
+                  </span>{" "}
+                  OFF
+                </p>
+              </TextContentSection>
             </div>
             <div className="-rotate-[7.77deg] max-w-[235px] min-h-[300px]">
-              <img src={iphone2Image} alt="image of iphone" className="w-full h-full" />
+              <img
+                src={iphone2Image}
+                alt="image of iphone"
+                className="w-full h-full"
+              />
             </div>
           </div>
         </BannerWrapper>
+        <HeadingContentSection>
+          <Heading>
+            Lorem Lorem <HighlightedWord>Ipum</HighlightedWord>
+          </Heading>
+          <SubHeading>
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry.
+          </SubHeading>
+        </HeadingContentSection>
       </Container>
     </div>
   );

@@ -9,7 +9,7 @@ export const Heading = ({
 
   const variants = {
     big: "text-[40px] text-white font-young-serif leading-[50px]",
-    default: "text-[26px] text-[#000000] font-urbanist",
+    default: "text-[20px] text-[#000000] font-urbanist font-semibold",
   };
 
   const heading = variants[variant] || variants.default;
