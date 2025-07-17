@@ -1,13 +1,13 @@
 import { TextContentSection } from "@/components/TextContentSection";
-import { ProductCardImageSection } from "./ProductCardImageSection";
-import { ProductCardBrandTitle } from "./ProductCardBrandTitle";
-import { ProductCardTitle } from "./ProductCardTitle";
-import { ProductCardStarsSection } from "./ProductCardStarsSection";
-import { ProductCardPrice } from "./ProductCardPrice";
+import { PremiumCardImageSection } from "./PremiumCardImageSection";
+import { PremiumCardBrandTitle } from "./PremiumCardBrandTitle";
+import { PremiumCardTitle } from "./PremiumCardTitle";
+import { PremiumCardStarsSection } from "./PremiumCardStarsSection";
+import { PremiumCardPrice } from "./PremiumCardPrice";
 import { Button } from "@/components/others/Button";
-import { ProductCardWrapper } from "./ProductCardWrapper";
+import { PremiumCardWrapper } from "./PremiumCardWrapper";
 
-export const ProductCard = ({
+export const PremiumCard = ({
   image,
   imageAlt,
   brand,
@@ -16,28 +16,28 @@ export const ProductCard = ({
   afterPrice,
 }) => {
   return (
-    <ProductCardWrapper>
-      <ProductCardImageSection>
+    <PremiumCardWrapper>
+      <PremiumCardImageSection>
         <div className="max-w-[100px] min-h-[110px]">
           <img src={image} alt={imageAlt} className="w-full h-full" />
         </div>
-      </ProductCardImageSection>
+      </PremiumCardImageSection>
       <TextContentSection className="gap-[8px]">
-        <ProductCardBrandTitle>{brand}</ProductCardBrandTitle>
-        <ProductCardTitle>{title}</ProductCardTitle>
+        <PremiumCardBrandTitle>{brand}</PremiumCardBrandTitle>
+        <PremiumCardTitle>{title}</PremiumCardTitle>
       </TextContentSection>
-      <ProductCardStarsSection />
+      <PremiumCardStarsSection />
       <div className="flex justify-between">
-        <ProductCardPrice>Price</ProductCardPrice>
+        <PremiumCardPrice>Price</PremiumCardPrice>
         <div className="flex items-end">
-          <ProductCardPrice variant="beforePrice">
+          <PremiumCardPrice variant="beforePrice">
             {beforePrice}
-          </ProductCardPrice>
-          <ProductCardPrice variant="afterPrice">{afterPrice}</ProductCardPrice>
+          </PremiumCardPrice>
+          <PremiumCardPrice variant="afterPrice">{afterPrice}</PremiumCardPrice>
         </div>
       </div>
       <div className="flex justify-between">
-        <Button variant="blueBtn">
+        <Button variant="yellowBtn">
           View Now
           <svg
             viewBox="0 0 10 10"
@@ -60,6 +60,6 @@ export const ProductCard = ({
           WhatsApp
         </Button>
       </div>
-    </ProductCardWrapper>
+    </PremiumCardWrapper>
   );
 };
