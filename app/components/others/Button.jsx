@@ -5,6 +5,7 @@ export const Button = ({ children, className = "", variant = "default" }) => {
     default: "blueBtn",
     blueBtn: "cardBlueBtn",
     blackBtn: "cardBlackBtn",
+    yellowBtn: "cardYellowBtn",
   };
 
   const button = variants[variant] || variants.default;

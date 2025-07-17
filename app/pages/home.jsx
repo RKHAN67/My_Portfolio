@@ -9,8 +9,44 @@ import { Heading } from "@/components/typography/Heading";
 import { HighlightedWord } from "@/components/typography/HighlightedWord";
 import { SubHeading } from "@/components/typography/SubHeading";
 import { HeadingContentSection } from "@/components/HeadingContentSection";
+import { PremiumCard } from "@/components/cards/premium-card/PremiumCard";
 
 export const productCardData = [
+  {
+    image: iphoneImage,
+    imageAlt: "Product 1 Image",
+    brand: "Apple",
+    title: "Elegance Meets Power iPhone Pro Max",
+    beforePrice: "$39.99",
+    afterPrice: "$999",
+  },
+  {
+    image: iphoneImage,
+    imageAlt: "Product 1 Image",
+    brand: "Apple",
+    title: "Elegance Meets Power iPhone Pro Max",
+    beforePrice: "$39.99",
+    afterPrice: "$999",
+  },
+  {
+    image: iphoneImage,
+    imageAlt: "Product 1 Image",
+    brand: "Apple",
+    title: "Elegance Meets Power iPhone Pro Max",
+    beforePrice: "$39.99",
+    afterPrice: "$999",
+  },
+  {
+    image: iphoneImage,
+    imageAlt: "Product 1 Image",
+    brand: "Apple",
+    title: "Elegance Meets Power iPhone Pro Max",
+    beforePrice: "$39.99",
+    afterPrice: "$999",
+  },
+];
+
+export const premiumCardData = [
   {
     image: iphoneImage,
     imageAlt: "Product 1 Image",
@@ -111,6 +147,20 @@ export default function Home() {
             industry.
           </SubHeading>
         </HeadingContentSection>
+
+        <div className="flex justify-between gap-[20px]">
+          {premiumCardData.map((data, index) => (
+            <PremiumCard
+              key={index}
+              image={data.image}
+              imageAlt={data.imageAlt}
+              brand={data.brand}
+              title={data.title}
+              beforePrice={data.beforePrice}
+              afterPrice={data.afterPrice}
+            />
+          ))}
+        </div>
       </Container>
     </div>
   );
